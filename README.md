@@ -37,7 +37,7 @@ how to install react-hook-form [npm i react-hook-form](https://publiuslogic.com/
 
 ### Usage
 
-```ddd```
+
 
 ### Making a Progressive Web App
 
