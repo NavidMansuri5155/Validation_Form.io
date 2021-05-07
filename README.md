@@ -38,20 +38,40 @@ how to install react-hook-form [npm i react-hook-form](https://publiuslogic.com/
 ### Usage
 
 
+    } 
+       import React from 'react';
+       import { useForm } from 'react-hook-form';
 
-### Making a Progressive Web App
+       function App() {
+     const {
+       register,
+       handleSubmit,
+       formState: { errors },
+       } = useForm();
+     const onSubmit = (data) => console.log(data);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+       return (
+      <form onSubmit={handleSubmit(onSubmit)}>
+         <input {...register('firstName')} /> {/* register an input */}
+         <input {...register('lastName', { required: true })} />
+         {errors.lastName && <p>Last name is required.</p>}
+         <input {...register('age', { pattern: /\d+/ })} />
+         {errors.age && <p>Please enter number for age.</p>}
+         <input type="submit" />
+     </form>
+      );
+    }
 
-### Advanced Configuration
+### COME MY CODE 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Form.js  [code](Validation_Form.io/src/comonenet/Form.js)
 
-### Deployment
+### Development
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify 
+    } 
+       npm install
+       npm start 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 
